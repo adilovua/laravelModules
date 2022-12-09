@@ -10,7 +10,8 @@
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
-        "pierresilva/laravel-modules": "^8.42"
+        "pierresilva/laravel-modules": "^8.42",
+        "wikimedia/composer-merge-plugin": "^2.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
@@ -51,6 +52,11 @@
     "extra": {
         "laravel": {
             "dont-discover": []
+        },
+        "merge-plugin": {
+            "include": [
+                "app/Modules/*/composer.json"
+            ]
         }
     },
     "config": {
@@ -58,7 +64,8 @@
         "preferred-install": "dist",
         "sort-packages": true,
         "allow-plugins": {
-            "pestphp/pest-plugin": true
+            "pestphp/pest-plugin": true,
+            "wikimedia/composer-merge-plugin": true
         }
     },
     "minimum-stability": "dev",
